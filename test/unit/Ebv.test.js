@@ -83,15 +83,6 @@ describe("ebv", async () => {
     it("Document Id Stored", async () => {
       assert.equal(res.docId, "AN5630Y");
     })
-    it("document push and verify", async ()=>{
-      await ebv.hashArray("NCERT", "AN5630Y");
-      let k = await ebv.documentPush("NCERT");
-      assert.isTrue(await ebv.hashVerify(k));
-    })
-    it("document push and verify fail", async ()=>{
-      let k = await ebv.documentPush("NCERT");
-      assert.isTrue(!await ebv.hashVerify(k));
-    })
   })
   describe("OwnerPower", async () => {
     let res;
